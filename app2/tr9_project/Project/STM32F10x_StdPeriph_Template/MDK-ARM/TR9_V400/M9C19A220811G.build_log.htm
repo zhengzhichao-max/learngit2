@@ -1,0 +1,598 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: cwy cwy, cwy, LIC=VGXG8-3CAVR-FW22N-YG8NA-23WT0-8BMN2
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      Segger\JL2CM3.dll V2.99.40.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+F:\xh\work\prj\BDZ007X\program\GD305_RK3568\APP\tr9_project\Project\STM32F10x_StdPeriph_Template\MDK-ARM\Project.uvprojx
+Project File Date:  08/26/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'XH7_EC20_ZTC_V300'
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_tim.c...
+compiling stm32f10x_crc.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_adc.c...
+compiling misc.c...
+compiling stm32f10x_spi.c...
+compiling stm32f10x_iwdg.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_rtc.c...
+compiling stm32f10x_bkp.c...
+compiling stm32f10x_can.c...
+assembling startup_stm32f10x_cl.s...
+compiling core_cm3.c...
+compiling system_stm32f10x.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_pwr.c...
+compiling gps_drv.c...
+compiling gsm_drv.c...
+compiling stm32f10x_it.c...
+..\..\..\..\source\drv\mcu_it\stm32f10x_it.c(158): warning:  #177-D: variable "state_jif"  was declared but never referenced
+  	 static u32 state_jif = 0;
+..\..\..\..\source\drv\mcu_it\stm32f10x_it.c(471): warning:  #188-D: enumerated type mixed with another type
+  		Can_id_config.bit.chnnal = 0 ; 					//CAN1通道号
+..\..\..\..\source\drv\mcu_it\stm32f10x_it.c(451): warning:  #177-D: variable "mse"  was declared but never referenced
+  	u8 mse ;
+..\..\..\..\source\drv\mcu_it\stm32f10x_it.c(610): warning:  #188-D: enumerated type mixed with another type
+  		Can_id_config2.bit.chnnal = 1 ; 					//CAN2通道号
+..\..\..\..\source\drv\mcu_it\stm32f10x_it.c(593): warning:  #177-D: variable "mse"  was declared but never referenced
+  	u8 mse ;
+..\..\..\..\source\drv\mcu_it\stm32f10x_it.c: 5 warnings, 0 errors
+compiling stm32f10x_i2c.c...
+compiling uart1.c...
+..\..\..\..\source\drv\uart1\uart1.c(431): warning:  #223-D: function "tr9_Auto_start" declared implicitly
+  				 tr9_Auto_start(r_buf,r_len);
+..\..\..\..\source\drv\uart1\uart1.c(397): warning:  #177-D: variable "buf"  was declared but never referenced
+  	u8  buf[30];
+..\..\..\..\source\drv\uart1\uart1.c: 2 warnings, 0 errors
+compiling spi_flash.c...
+compiling uart2.c...
+..\..\..\..\source\drv\uart2\uart2.c(224): warning:  #550-D: variable "r_len"  was set but never used
+      u16  r_len;
+..\..\..\..\source\drv\uart2\uart2.c(225): warning:  #177-D: variable "svn"  was declared but never referenced
+  	static u16  svn  =1 ;
+..\..\..\..\source\drv\uart2\uart2.c: 2 warnings, 0 errors
+compiling I2C.c...
+compiling adc.c...
+..\..\..\..\source\drv\adc\adc.c(81): warning:  #177-D: variable "tmr"  was declared but never referenced
+      static u32 tmr = 0 ; 
+..\..\..\..\source\drv\adc\adc.c: 1 warning, 0 errors
+compiling uart3.c...
+compiling drv_cfg_tr9.c...
+..\..\..\..\source\drv\drv_cfg\drv_cfg_tr9.c(1238): warning:  #177-D: variable "ab"  was declared but never referenced
+  	bool ab = false;
+..\..\..\..\source\drv\drv_cfg\drv_cfg_tr9.c: 1 warning, 0 errors
+compiling gps_manage.c...
+..\..\..\..\source\mid\gps_manage\gps_manage.c(640): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *restrict"
+          sscanf(pt,"%[^,]",buf);
+..\..\..\..\source\mid\gps_manage\gps_manage.c(682): warning:  #177-D: variable "tnew"  was declared but never referenced
+      u16 tnew;
+..\..\..\..\source\mid\gps_manage\gps_manage.c(684): warning:  #177-D: variable "dt"  was declared but never referenced
+      u16 dt;
+..\..\..\..\source\mid\gps_manage\gps_manage.c(686): warning:  #177-D: variable "dist"  was declared but never referenced
+      float dist;
+..\..\..\..\source\mid\gps_manage\gps_manage.c(691): warning:  #177-D: variable "told"  was declared but never referenced
+      static u16 told = 0;
+..\..\..\..\source\mid\gps_manage\gps_manage.c(692): warning:  #550-D: variable "vold"  was set but never used
+      static int vold = 0;
+..\..\..\..\source\mid\gps_manage\gps_manage.c(693): warning:  #550-D: variable "pold"  was set but never used
+      static point_t pold = {0, 0};
+..\..\..\..\source\mid\gps_manage\gps_manage.c(911): warning:  #177-D: variable "cun"  was declared but never referenced
+  	static u8 cun = 0;
+..\..\..\..\source\mid\gps_manage\gps_manage.c: 8 warnings, 0 errors
+compiling main.c...
+..\..\..\..\source\mid\main\main.c(137): warning:  #223-D: function "init_alarm_cfg" declared implicitly
+  	init_alarm_cfg();
+..\..\..\..\source\mid\main\main.c(235): warning:  #111-D: statement is unreachable
+  	return 0;
+..\..\..\..\source\mid\main\main.c(128): warning:  #177-D: variable "buff1"  was declared but never referenced
+  	u8 buff1[30] = {0};
+..\..\..\..\source\mid\main\main.c: 3 warnings, 0 errors
+compiling handset.c...
+..\..\..\..\source\mid\handset\handset.c(89): warning:  #177-D: variable "tmp"  was declared but never referenced
+  	u16 tmp;
+..\..\..\..\source\mid\handset\handset.c(2378): warning:  #177-D: variable "i"  was declared but never referenced
+      u16 i;
+..\..\..\..\source\mid\handset\handset.c: 2 warnings, 0 errors
+compiling send.c...
+compiling clib.c...
+compiling tts.c...
+compiling uart_pub.c...
+..\..\..\..\source\mid\uart\uart_pub.c(299): warning:  #177-D: variable "n"  was declared but never referenced
+  	u8 n = 0 ;
+..\..\..\..\source\mid\uart\uart_pub.c: 1 warning, 0 errors
+compiling pub.c...
+..\..\..\..\source\mid\pub\pub.c(362): warning:  #177-D: variable "Time"  was declared but never referenced
+     static u8 sec_bak = 0 ,Time = 0;
+..\..\..\..\source\mid\pub\pub.c(430): warning:  #177-D: variable "speed"  was declared but never referenced
+      u32  speed = 0;
+..\..\..\..\source\mid\pub\pub.c(826): warning:  #177-D: variable "pm_accS"  was declared but never referenced
+  	E_ACC_MAMNAGE pm_accS;
+..\..\..\..\source\mid\pub\pub.c(828): warning:  #550-D: variable "coun"  was set but never used
+  	static bool coun = false; 
+..\..\..\..\source\mid\pub\pub.c(833): warning:  #177-D: variable "iii"  was declared but never referenced
+  	u8 iii;
+..\..\..\..\source\mid\pub\pub.c(836): warning:  #177-D: variable "timer10_flag"  was declared but never referenced
+  	static u8  timer10_flag = 0 ;
+..\..\..\..\source\mid\pub\pub.c(840): warning:  #177-D: variable "invc"  was declared but never referenced
+  	static u32    invc	= 0 ;     
+..\..\..\..\source\mid\pub\pub.c(842): warning:  #177-D: variable "timer10"  was declared but never referenced
+  	static u32 timer10 = 0;
+..\..\..\..\source\mid\pub\pub.c(846): warning:  #550-D: variable "acc"  was set but never used
+      u8  acc=0;
+..\..\..\..\source\mid\pub\pub.c(847): warning:  #550-D: variable "simulat_acc"  was set but never used
+      u8  simulat_acc;
+..\..\..\..\source\mid\pub\pub.c(520): warning:  #177-D: function "Get_External_Power_Value"  was declared but never referenced
+  static u16 Get_External_Power_Value(void)
+..\..\..\..\source\mid\pub\pub.c: 11 warnings, 0 errors
+compiling mid_cfg.c...
+compiling call_record.c...
+compiling card_scan.c...
+..\..\..\..\source\mid\slave_mcu\card_scan\card_scan.c(61): warning:  #550-D: variable "xorr"  was set but never used
+  	u8    xorr=0;
+..\..\..\..\source\mid\slave_mcu\card_scan\card_scan.c: 1 warning, 0 errors
+compiling hard_config.c...
+compiling key_state.c...
+compiling data_interaction.c...
+compiling print_driver.c...
+compiling phone_book.c...
+compiling recorder.c...
+..\..\..\..\source\mid\slave_mcu\recorder\recorder.c(34): warning:  #177-D: variable "tmr"  was declared but never referenced
+  	static uint tmr = 0;
+..\..\..\..\source\mid\slave_mcu\recorder\recorder.c: 1 warning, 0 errors
+compiling at24cxx_driver.c...
+compiling sms_process.c...
+compiling lcd13264_ram.c...
+compiling ccsbcs.c...
+compiling iic_base_driver.c...
+compiling menu_process.c...
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2102): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  			sprintf(buff,"%d",mix.locate.lngi);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2112): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  			sprintf(buff,"%d",mix.locate.lati);	
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2148): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  			sprintf(buff,"%02d",mix.dist);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2160): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  			sprintf(buff,"%02d",factory_para.set_speed_plus);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2176): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  			sprintf(buff,"%d",mix.fix_num);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2180): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  			sprintf(buff,"%d",mix.speed);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2185): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  			sprintf(buff,"%d",mix.heigh);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2089): warning:  #177-D: variable "i"  was declared but never referenced
+  	u16    i;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2239): warning:  #177-D: variable "j"  was declared but never referenced
+      u16   i, j, n;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(2240): warning:  #177-D: variable "flag"  was declared but never referenced
+      bool  flag;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(3432): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  		_sprintf_len(query.host.ip3,"暂无");
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(3504): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  		sprintf(buff,"%s",TR9_SW_VERSION);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(3505): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *"
+  		i = strlen(buff);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4508): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  			_sprintf_len(buff,"20%02d-%02d-%02d_%02d:%02d:%02d",fatigue_print.cell[0].start.year,fatigue_print.cell[0].start.month,\
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4515): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  			_sprintf_len(buff,"20%02d-%02d-%02d_%02d:%02d:%02d",fatigue_print.cell[0].end.year,fatigue_print.cell[0].end.month,\
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4547): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  					_sprintf_len(buff,"20%02d-%02d-%02d_%02d:%02d:%02d",fatigue_print.cell[1].start.year,fatigue_print.cell[1].start.month,\
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4567): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  			_sprintf_len(buff,"20%02d-%02d-%02d_%02d:%02d:%02d",fatigue_print.cell[1].end.year,fatigue_print.cell[1].end.month,\
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4465): warning:  #177-D: variable "i"  was declared but never referenced
+  	u16    i ,ret,len;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4465): warning:  #177-D: variable "len"  was declared but never referenced
+  	u16    i ,ret,len;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4628): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  				_sprintf_len(buff + len,"%02d_%02d:%02d_速度:%02d",i,speed_print.HMt[i].hour,speed_print.HMt[i].minute,speed_print.HMt[i].speed);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4642): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  				_sprintf_len(buff + len,"%02d_%02d:%02d_速度:%02d",i,speed_print.HMt[i].hour,speed_print.HMt[i].minute,speed_print.HMt[i].speed);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4657): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  				_sprintf_len(buff + len,"%02d_%02d:%02d_速度:%02d",i,speed_print.HMt[i].hour,speed_print.HMt[i].minute,speed_print.HMt[i].speed);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4672): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+  				_sprintf_len(buff + len,"%02d_%02d:%02d_速度:%02d",i,speed_print.HMt[i].hour,speed_print.HMt[i].minute,speed_print.HMt[i].speed);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4618): warning:  #177-D: variable "ret"  was declared but never referenced
+  	u16    i ,ret,len=0;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4799): warning:  #177-D: variable "i"  was declared but never referenced
+      u8   m,i;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(5572): warning:  #167-D: argument of type "u8 **" is incompatible with parameter of type "const u8 **"
+                      menu_move_display((menu_driver_name_dis + i), i, menu_cnt.menu_3rd, menu_driver_info_cnt);
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(5465): warning:  #177-D: variable "da"  was declared but never referenced
+      u16  da;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(5466): warning:  #177-D: variable "temp"  was declared but never referenced
+      u8 temp[8];   
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(5895): warning:  #188-D: enumerated type mixed with another type
+  			call_record.call_record_buff[i].type = 1 ;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(6130): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i ,ret ;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(6130): warning:  #177-D: variable "ret"  was declared but never referenced
+  	u8 i ,ret ;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(7789): warning:  #177-D: variable "mm"  was declared but never referenced
+  	static u8  mm =  1 ;
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(4722): warning:  #177-D: function "mo_sms_phone"  was declared but never referenced
+  static void mo_sms_phone(void)
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c(5877): warning:  #177-D: function "key_2nd_phone_dial_hdl"  was declared but never referenced
+  static void key_2nd_phone_dial_hdl(void)
+..\..\..\..\source\mid\slave_mcu\menu_process\menu_process.c: 34 warnings, 0 errors
+compiling cc936.c...
+compiling app_cfg.c...
+..\..\..\..\source\app\app_cfg\app_cfg.c(74): warning:  #177-D: variable "dog"  was declared but never referenced
+  	static u8 dog = 0;
+..\..\..\..\source\app\app_cfg\app_cfg.c: 1 warning, 0 errors
+compiling gsm_ec20.c...
+..\..\..\..\source\mid\gsm_manage\gsm_ec20.c(553): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i ;
+..\..\..\..\source\mid\gsm_manage\gsm_ec20.c(1384): warning:  #177-D: variable "clearip"  was declared but never referenced
+  	 u8 clearip[24]={0};
+..\..\..\..\source\mid\gsm_manage\gsm_ec20.c(1673): warning:  #550-D: variable "len"  was set but never used
+  	u16 len;
+..\..\..\..\source\mid\gsm_manage\gsm_ec20.c(2219): warning:  #188-D: enumerated type mixed with another type
+                  gsm_step = TXT_CSCS_ACK_1;
+..\..\..\..\source\mid\gsm_manage\gsm_ec20.c(2164): warning:  #550-D: variable "phone_len"  was set but never used
+      u8 phone_len;
+..\..\..\..\source\mid\gsm_manage\gsm_ec20.c(2478): warning:  #550-D: variable "tsend"  was set but never used
+      static u16 tsend;
+..\..\..\..\source\mid\gsm_manage\gsm_ec20.c(3090): warning:  #177-D: variable "tmp"  was declared but never referenced
+  	u8    tmp[40] = {0};
+..\..\..\..\source\mid\gsm_manage\gsm_ec20.c(48): warning:  #550-D: variable "off_times"  was set but never used
+  static u8 off_times = 0; 	//AT 关机次数
+..\..\..\..\source\mid\gsm_manage\gsm_ec20.c: 8 warnings, 0 errors
+compiling jt808_package.c...
+..\..\..\..\source\app\net\jt808_package.c(293): warning:  #177-D: variable "n"  was declared but never referenced
+  	u8 i,n;
+..\..\..\..\source\app\net\jt808_package.c(415): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i;
+..\..\..\..\source\app\net\jt808_package.c: 2 warnings, 0 errors
+compiling jt808_recive.c...
+..\..\..\..\source\app\net\jt808_recive.c(1555): warning:  #177-D: variable "ucl"  was declared but never referenced
+      u8  ucl;
+..\..\..\..\source\app\net\jt808_recive.c(1813): warning:  #177-D: variable "dat"  was declared but never referenced
+      u8  dat;
+..\..\..\..\source\app\net\jt808_recive.c(1916): warning:  #223-D: function "khd_set_card_message" declared implicitly
+          khd_set_card_message(str, s_len);
+..\..\..\..\source\app\net\jt808_recive.c(1858): warning:  #177-D: variable "speed"  was declared but never referenced
+  	u16     speed;
+..\..\..\..\source\app\net\jt808_recive.c(1859): warning:  #177-D: variable "tmr"  was declared but never referenced
+  	u16     tmr;
+..\..\..\..\source\app\net\jt808_recive.c(1860): warning:  #177-D: variable "len"  was declared but never referenced
+      u16     len;
+..\..\..\..\source\app\net\jt808_recive.c(2152): warning:  #175-D: subscript out of range
+      tmp[6] = 0;
+..\..\..\..\source\app\net\jt808_recive.c(2396): warning:  #550-D: variable "cmd"  was set but never used
+  	u8 cmd;
+..\..\..\..\source\app\net\jt808_recive.c(2411): warning:  #550-D: variable "cmd"  was set but never used
+  	u8 cmd;
+..\..\..\..\source\app\net\jt808_recive.c(2425): warning:  #550-D: variable "cmd"  was set but never used
+  	u8 cmd;
+..\..\..\..\source\app\net\jt808_recive.c(2583): warning:  #550-D: variable "pf"  was set but never used
+  	u8  *pf;
+..\..\..\..\source\app\net\jt808_recive.c(2156): warning: C4488E: write to variable 'tmp' with offset out of bounds
+}
+..\..\..\..\source\app\net\jt808_recive.c: 12 warnings, 0 errors
+compiling jt808_manage.c...
+..\..\..\..\source\app\net\jt808_manage.c(53): warning:  #177-D: variable "con"  was declared but never referenced
+  	static u8 con = 0 ;
+..\..\..\..\source\app\net\jt808_manage.c: 1 warning, 0 errors
+compiling jt808_parse.c...
+compiling rcd_manage.c...
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(114): warning:  #177-D: variable "cnt_b6"  was declared but never referenced
+      static u8 cnt_b6 = 0;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(115): warning:  #177-D: variable "cnt_b7"  was declared but never referenced
+      static u8 cnt_b7 = 0;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(667): warning:  #177-D: variable "moving"  was declared but never referenced
+  	static bool moving = false;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(668): warning:  #177-D: variable "flag"  was declared but never referenced
+  	static bool flag = false ;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(1050): warning:  #550-D: variable "sec"  was set but never used
+  	static u32 sec =0 ;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(1245): warning:  #111-D: statement is unreachable
+      return 0;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(1930): warning:  #550-D: variable "tired_near"  was set but never used
+    static bool tired_near = false;        //=true  已经达到接近疲劳驾驶预警标志。
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(2160): warning:  #188-D: enumerated type mixed with another type
+              rcd_ot_data_write(msg, msg_len,rcd_ot_inf.res1);
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(2316): warning:  #177-D: variable "buff"  was declared but never referenced
+  	u8 buff[32]={0};
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(2376): warning:  #177-D: variable "fal"  was declared but never referenced
+  	static bool fal = false;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3015): warning:  #940-D: missing return statement at end of non-void function "rcd_speed_fill_in_infomation" 
+  }
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3093): warning:  #940-D: missing return statement at end of non-void function "rcd_speed_data_write" 
+  }
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3133): warning:  #177-D: variable "msg_len"  was declared but never referenced
+  	static u16 msg_len = 50 ;	
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3219): warning:  #177-D: variable "fal"  was declared but never referenced
+  	static bool fal = false;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3220): warning:  #177-D: variable "qin"  was declared but never referenced
+  	u8 qin =100;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3302): warning:  #177-D: variable "min"  was declared but never referenced
+  	u8 hour, month, day, min;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3580): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3666): warning:  #223-D: function "init_car_cfg" declared implicitly
+                    init_car_cfg();
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(4237): warning:  #177-D: variable "in_buf"  was declared but never referenced
+                    u8 in_buf[50];
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(4238): warning:  #177-D: variable "b_len"  was declared but never referenced
+                    u16 b_len = 0;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3605): warning:  #177-D: variable "item"  was declared but never referenced
+  	 u32 item = 0;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3606): warning:  #177-D: variable "k"  was declared but never referenced
+  	 u32 i,k=0;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(3608): warning:  #177-D: variable "rand_pos_num"  was declared but never referenced
+  	 u8 rand_pos_num = 0;
+..\..\..\..\source\app\rcd_2012\rcd_manage.c(959): warning:  #177-D: function "rcd48_data_inport_write"  was declared but never referenced
+  static bool rcd48_data_inport_write(u8 * p , u16 len)
+..\..\..\..\source\app\rcd_2012\rcd_manage.c: 24 warnings, 0 errors
+compiling report.c...
+..\..\..\..\source\app\report\report.c(60): warning:  #177-D: variable "ftime"  was declared but never referenced
+  	u32 ftime = 60;
+..\..\..\..\source\app\report\report.c(619): warning:  #177-D: variable "time"  was declared but never referenced
+  	u32 time = 0;
+..\..\..\..\source\app\report\report.c(660): warning:  #177-D: variable "close_low_volt"  was declared but never referenced
+  	static u8    close_low_volt = 0 ;
+..\..\..\..\source\app\report\report.c(114): warning:  #177-D: function "pwr_cut_rept"  was declared but never referenced
+  static void pwr_cut_rept(void)
+..\..\..\..\source\app\report\report.c(179): warning:  #177-D: function "pwr_low_rept"  was declared but never referenced
+  static void pwr_low_rept(void)
+..\..\..\..\source\app\report\report.c: 5 warnings, 0 errors
+compiling upgrade.c...
+..\..\..\..\source\app\upgrade\upgrade.c(688): warning:  #188-D: enumerated type mixed with another type
+      ret = verify_spi_flash();
+..\..\..\..\source\app\upgrade\upgrade.c(927): warning:  #550-D: variable "new_step"  was set but never used
+  	static bool new_step = false;
+..\..\..\..\source\app\upgrade\upgrade.c: 2 warnings, 0 errors
+compiling rcd_communicate.c...
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(562): warning:  #177-D: variable "buff"  was declared but never referenced
+  	u8 buff[30]={0};
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(930): warning:  #177-D: variable "unusual"  was declared but never referenced
+  	u32 unusual ;
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(931): warning:  #177-D: variable "unusualBak"  was declared but never referenced
+  	u16 unusualBak ;
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(1473): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i = 0 ;
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(1597): warning:  #177-D: variable "sig_state"  was declared but never referenced
+  	signal_define_union sig_state;
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(2191): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i;
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(2456): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  	sprintf(uBuff,"%7s","C000000");
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(2459): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+  	sprintf(uBuff+uLen,"%16s","Z/HT-9C");
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(2448): warning:  #177-D: variable "sdf"  was declared but never referenced
+  	u8 sdf= 0;
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(2575): warning:  #177-D: variable "sum"  was declared but never referenced
+  	u16 sum =0 ;
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(3373): warning:  #186-D: pointless comparison of unsigned integer with zero
+  		    DataNum =  subp_rcd_p(usb_rcd_pTmp.rcd48_p_head, 0, RCD48_NODE_MAX_SIZE);
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(5425): warning:  #177-D: variable "t_time"  was declared but never referenced
+  				u8 t_time[6] = {0};
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(5514): warning:  #177-D: variable "t_time"  was declared but never referenced
+  				u8 t_time[6] = {0};
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(5598): warning:  #177-D: variable "t_time"  was declared but never referenced
+  				u8 t_time[6] = {0};
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(5683): warning:  #177-D: variable "t_time"  was declared but never referenced
+  				u8 t_time[6] = {0};
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(5769): warning:  #177-D: variable "t_time"  was declared but never referenced
+  				u8 t_time[6] = {0};
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(5854): warning:  #177-D: variable "t_time"  was declared but never referenced
+  				u8 t_time[6] = {0};
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(5939): warning:  #177-D: variable "t_time"  was declared but never referenced
+  				u8 t_time[6] = {0};
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c(6025): warning:  #177-D: variable "t_time"  was declared but never referenced
+  				u8 t_time[6] = {0};
+..\..\..\..\source\app\rcd_2012\rcd_communicate.c: 19 warnings, 0 errors
+compiling sms_parse.c...
+..\..\..\..\source\app\sms\sms_parse.c(361): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *"
+  			m1.main_port = atoi(t_buf);
+..\..\..\..\source\app\sms\sms_parse.c(386): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *"
+  			m1.bak_port = atoi(t_buf);
+..\..\..\..\source\app\sms\sms_parse.c(631): warning:  #223-D: function "pwr_up_password_status" declared implicitly
+          pwr_up_password_status();
+..\..\..\..\source\app\sms\sms_parse.c(649): warning:  #177-D: variable "nowTime"  was declared but never referenced
+  	u8 nowTime = 0 ;
+..\..\..\..\source\app\sms\sms_parse.c: 4 warnings, 0 errors
+compiling print_2012.c...
+compiling print_2003.c...
+compiling ic4442_driver.c...
+compiling can.c...
+..\..\..\..\source\app\can\can.c(466): warning:  #188-D: enumerated type mixed with another type
+  			Can_id_config.bit.type 		= 1 ;	//帧类型		0是标准帧
+..\..\..\..\source\app\can\can.c(467): warning:  #188-D: enumerated type mixed with another type
+  			Can_id_config.bit.mode 		= 0 ;
+..\..\..\..\source\app\can\can.c(434): warning:  #177-D: variable "step"  was declared but never referenced
+      } step = E_CAN_DATA;
+..\..\..\..\source\app\can\can.c(437): warning:  #177-D: variable "j"  was declared but never referenced
+  	u16 i = 0 , j ;
+..\..\..\..\source\app\can\can.c(438): warning:  #177-D: variable "msms"  was declared but never referenced
+  	u8  msms= 0 ;
+..\..\..\..\source\app\can\can.c(442): warning:  #177-D: variable "tid"  was declared but never referenced
+  	u32 tid = 0;
+..\..\..\..\source\app\can\can.c(444): warning:  #177-D: variable "Can_data"  was declared but never referenced
+  	u8 Can_data[5]={0};
+..\..\..\..\source\app\can\can.c(506): warning:  #188-D: enumerated type mixed with another type
+  		Can_id_config.bit.type		= 1 ;											//帧类型 	0是标准帧
+..\..\..\..\source\app\can\can.c(507): warning:  #188-D: enumerated type mixed with another type
+  		Can_id_config.bit.mode		= 0 ;											//0是原始数据
+..\..\..\..\source\app\can\can.c(508): warning:  #188-D: enumerated type mixed with another type
+  		Can_id_config.bit.chnnal	= 0 ;
+..\..\..\..\source\app\can\can.c(538): warning:  #188-D: enumerated type mixed with another type
+  		Can_id_config2.bit.type 	= 1 ;											//帧类型 	0是标准帧
+..\..\..\..\source\app\can\can.c(539): warning:  #188-D: enumerated type mixed with another type
+  		Can_id_config2.bit.mode 	= 0 ;											//0是原始数据
+..\..\..\..\source\app\can\can.c(540): warning:  #188-D: enumerated type mixed with another type
+  		Can_id_config2.bit.chnnal	= 1 ;
+..\..\..\..\source\app\can\can.c(569): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i;
+..\..\..\..\source\app\can\can.c(15): warning:  #177-D: variable "cun"  was declared but never referenced
+  static u8 cun =0;
+..\..\..\..\source\app\can\can.c: 15 warnings, 0 errors
+compiling MMA8451.c...
+..\..\..\..\source\app\mma8451\MMA8451.c(44): warning:  #870-D: invalid multibyte character sequence
+  		_printf("鍒濆鍖栧け璐ワ紝ID閿欒锛?%#02x\r\n", temp);
+..\..\..\..\source\app\mma8451\MMA8451.c(47): warning:  #870-D: invalid multibyte character sequence
+  	_printf("ID锛?0x%02X\r\n", temp);
+..\..\..\..\source\app\mma8451\MMA8451.c: 2 warnings, 0 errors
+compiling systick.c...
+compiling tr9_agree.c...
+..\..\..\..\source\app\tr9\tr9_agree.c(77): warning:  #177-D: variable "time"  was declared but never referenced
+  	u16 time = 0 ;
+..\..\..\..\source\app\tr9\tr9_agree.c(215): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+  	len = _strlen(jt808_para.SIMCardNum);
+..\..\..\..\source\app\tr9\tr9_agree.c(202): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(405): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uc8 *"
+  	_memcpy(car_cfg.type,(jt808_para.CarType ),16  );
+..\..\..\..\source\app\tr9\tr9_agree.c(407): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uc8 *"
+  	_memcpy(car_cfg.vin,(jt808_para.CarIdentity), 17);
+..\..\..\..\source\app\tr9\tr9_agree.c(328): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(646): warning:  #177-D: variable "tmr"  was declared but never referenced
+  	u16 tmr;
+..\..\..\..\source\app\tr9\tr9_agree.c(747): warning:  #223-D: function "khd_set_card_message" declared implicitly
+          khd_set_card_message(str, s_len);
+..\..\..\..\source\app\tr9\tr9_agree.c(679): warning:  #550-D: variable "pf"  was set but never used
+  	u8  *pf;
+..\..\..\..\source\app\tr9\tr9_agree.c(680): warning:  #177-D: variable "tmr"  was declared but never referenced
+  	u16 tmr;
+..\..\..\..\source\app\tr9\tr9_agree.c(681): warning:  #177-D: variable "buf"  was declared but never referenced
+  	u8  buf[3];
+..\..\..\..\source\app\tr9\tr9_agree.c(683): warning:  #177-D: variable "speed"  was declared but never referenced
+  	u16 speed;
+..\..\..\..\source\app\tr9\tr9_agree.c(941): warning:  #68-D: integer conversion resulted in a change of sign
+  	return -1;
+..\..\..\..\source\app\tr9\tr9_agree.c(992): warning:  #186-D: pointless comparison of unsigned integer with zero
+  	if(offset>=0)
+..\..\..\..\source\app\tr9\tr9_agree.c(1306): warning:  #177-D: variable "vin"  was declared but never referenced
+            u8 vin[32]={0};
+..\..\..\..\source\app\tr9\tr9_agree.c(1307): warning:  #177-D: variable "driver_num"  was declared but never referenced
+            u8 driver_num[32]={0};
+..\..\..\..\source\app\tr9\tr9_agree.c(1308): warning:  #177-D: variable "vehicle_num"  was declared but never referenced
+            u8 vehicle_num[32]={0}; 
+..\..\..\..\source\app\tr9\tr9_agree.c(1439): warning:  #177-D: variable "tmp"  was declared but never referenced
+             u8 tmp[16];
+..\..\..\..\source\app\tr9\tr9_agree.c(1440): warning:  #177-D: variable "dr"  was declared but never referenced
+             u32 dr = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(1854): warning:  #69-D: integer conversion resulted in truncation
+             u8 buf[]={0xF0,0x60,0x32,0x00,0x08,0x15,0xAA,0x75,0x15,0x00,0x00,0x00,0xCA,0x4F,0xfF0};
+..\..\..\..\source\app\tr9\tr9_agree.c(2340): warning:  #188-D: enumerated type mixed with another type
+  		tr9_Set_Can[i].pipe		= (*pa   & 0x80 ) >> 7	;	//通道号		31bit	0是通道一
+..\..\..\..\source\app\tr9\tr9_agree.c(2341): warning:  #188-D: enumerated type mixed with another type
+  		tr9_Set_Can[i].data_type= (*pa   & 0x40 ) >> 6	;	//数据类型		30bit	0是标准帧
+..\..\..\..\source\app\tr9\tr9_agree.c(2342): warning:  #188-D: enumerated type mixed with another type
+  		tr9_Set_Can[i].get_way	= (*pa   & 0x20 ) >> 5	;	//采集方式		29bit  	0是原始数据
+..\..\..\..\source\app\tr9\tr9_agree.c(2424): warning:  #177-D: variable "n"  was declared but never referenced
+  	u8 i,n = 0 ;
+..\..\..\..\source\app\tr9\tr9_agree.c(2529): warning:  #188-D: enumerated type mixed with another type
+  			phbk_data.type 		=  	*(str++);		//类型
+..\..\..\..\source\app\tr9\tr9_agree.c(2697): warning:  #177-D: variable "TY_ACK"  was declared but never referenced
+  	u8  TY_ACK[32]	= {0} ;
+..\..\..\..\source\app\tr9\tr9_agree.c(2702): warning:  #177-D: variable "cnt"  was declared but never referenced
+      u16  i, cnt;
+..\..\..\..\source\app\tr9\tr9_agree.c(2704): warning:  #550-D: variable "ser_num"  was set but never used
+      u16  ser_num;
+..\..\..\..\source\app\tr9\tr9_agree.c(2950): warning:  #177-D: variable "cmd"  was declared but never referenced
+  	u8 cmd[24] = {0} ;	
+..\..\..\..\source\app\tr9\tr9_agree.c(3005): warning:  #223-D: function "Open_Pwr_All" declared implicitly
+  				Open_Pwr_All();
+..\..\..\..\source\app\tr9\tr9_agree.c(3050): warning:  #223-D: function "Open_Pwr_All" declared implicitly
+  					Open_Pwr_All(); 								//打开全部电源	
+..\..\..\..\source\app\tr9\tr9_agree.c(3139): warning:  #187-D: use of "=" where "==" may have been intended
+  							if(Rk_Task_Manage.RK_WaitingSend = false) 
+..\..\..\..\source\app\tr9\tr9_agree.c(3153): warning:  #223-D: function "Open_Pwr_All" declared implicitly
+  							Open_Pwr_All();	
+..\..\..\..\source\app\tr9\tr9_agree.c(3184): warning:  #188-D: enumerated type mixed with another type
+  		time_Bucket = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(2971): warning:  #177-D: variable "j"  was declared but never referenced
+  	u8 i = 0,j = 0 ;
+..\..\..\..\source\app\tr9\tr9_agree.c(2975): warning:  #177-D: variable "record"  was declared but never referenced
+  	u8 record = 255;
+..\..\..\..\source\app\tr9\tr9_agree.c(2989): warning:  #177-D: variable "rouse_step1"  was declared but never referenced
+  	static u8 	rouse_step1[4] = {0} ;
+..\..\..\..\source\app\tr9\tr9_agree.c(2992): warning:  #177-D: variable "powerOffTime"  was declared but never referenced
+  	static u16 powerOffTime= 0 ;
+..\..\..\..\source\app\tr9\tr9_agree.c(2993): warning:  #177-D: variable "powerOnTime"  was declared but never referenced
+  	static u16 powerOnTime= 0 ;
+..\..\..\..\source\app\tr9\tr9_agree.c(3239): warning:  #177-D: variable "pa"  was declared but never referenced
+  	u8 *pa  = NULL ;
+..\..\..\..\source\app\tr9\tr9_agree.c(3242): warning:  #177-D: variable "OffT"  was declared but never referenced
+  	u16 OffT = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3243): warning:  #177-D: variable "OnT"  was declared but never referenced
+  	u16 OnT = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3370): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i,n=0,mm=0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3370): warning:  #177-D: variable "n"  was declared but never referenced
+  	u8 i,n=0,mm=0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3370): warning:  #177-D: variable "mm"  was declared but never referenced
+  	u8 i,n=0,mm=0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3543): warning:  #144-D: a value of type "void (*)(void)" cannot be used to initialize an entity of type "funcp_net"
+  	{0x6051, tr9_6051_task},		//挂载U盘					【SOC->MCU】	
+..\..\..\..\source\app\tr9\tr9_agree.c(3592): warning:  #177-D: variable "ecnt"  was declared but never referenced
+  	static u8 ecnt = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3686): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i;
+..\..\..\..\source\app\tr9\tr9_agree.c(3690): warning:  #177-D: variable "stat"  was declared but never referenced
+  	u8  stat = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3691): warning:  #177-D: variable "pwr"  was declared but never referenced
+  	u8  pwr = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3692): warning:  #177-D: variable "tempture"  was declared but never referenced
+  	u8  tempture = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3693): warning:  #177-D: variable "Real_time"  was declared but never referenced
+  	time_t Real_time;
+..\..\..\..\source\app\tr9\tr9_agree.c(3694): warning:  #177-D: variable "Uint16_Uint8"  was declared but never referenced
+  	u16 Uint16_Uint8 ;
+..\..\..\..\source\app\tr9\tr9_agree.c(3698): warning:  #177-D: variable "lati"  was declared but never referenced
+  	static u32 lati = 0 ,lngi = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3698): warning:  #177-D: variable "lngi"  was declared but never referenced
+  	static u32 lati = 0 ,lngi = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3959): warning:  #177-D: variable "state_jif"  was declared but never referenced
+      static u32 state_jif = 0;
+..\..\..\..\source\app\tr9\tr9_agree.c(3966): warning:  #177-D: variable "pf"  was declared but never referenced
+      u8  *pf;
+..\..\..\..\source\app\tr9\tr9_agree.c(110): warning:  #177-D: function "tr9_pwr_off"  was declared but never referenced
+  static void tr9_pwr_off(u8 * str, u16 s_len)
+..\..\..\..\source\app\tr9\tr9_agree.c: 58 warnings, 0 errors
+linking...
+Program Size: Code=182480 RO-data=10440 RW-data=2748 ZI-data=65164  
+FromELF: creating hex file...
+After Build - User command #1: fromelf --bin ".\TR9_V400\M9C19A220811G.axf" --output ".\tr_bin_lib\M9C19A220811G.bin"
+".\TR9_V400\M9C19A220811G.axf" - 0 Error(s), 225 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.1.0.5.pack
+                Keil.STM32F1xx_DFP.1.0.5
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\chenwenyuan\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:31
+</pre>
+</body>
+</html>

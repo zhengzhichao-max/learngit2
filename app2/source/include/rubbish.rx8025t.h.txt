@@ -1,0 +1,84 @@
+#ifndef __RX8025T_H__ 
+#define __RX8025T_H__ 
+ 
+
+typedef struct 
+{ 
+  u8 second; 
+  u8 minute; 
+  u8 hour;   
+  u8 week; 
+  u8 date;    
+  u8 month; 
+  u8 year; 
+  u8 reserve; 
+}STDATETIME; 
+
+
+/* Private typedef----------------------------------------------------------------------------*/
+// 寄存器结构
+// CONTROL1,结构定义
+typedef struct
+{
+        u8 CT:3;
+        u8 TEST:1;
+        u8 nCLEN2:1;
+        u8 HOUR24:1;
+        u8 DALE:1;
+        u8 WALE:1;
+}_RX8025_REG_CONTROL1_BITS;
+typedef union
+{
+        u8 byte;
+        _RX8025_REG_CONTROL1_BITS bits;
+}_RX8025_REG_CONTROL1;
+
+
+#define	RTC8025_Second        0  
+#define	RTC8025_Minute        1  
+#define	RTC8025_Hour          2  
+#define	RTC8025_Week          3  
+#define	RTC8025_Day           4  
+#define	RTC8025_Month         5  
+#define	RTC8025_Year          6  
+
+#define 	   RX8025T					   0x64
+ 
+// 设备读写地址
+#define        RX8025_ADDR_READ             0x65
+#define        RX8025_ADDR_WRITE            0x64		//0x64
+// 设备寄存器地址
+#define        RX8025_ADDR_SECONDS          0x00
+#define        RX8025_ADDR_WEEK                0x30
+#define        RX8025_ADDR_DATES               0x40
+#define        RX8025_ADDR_MONTH               0x50
+#define        RX8025_ADDR_MINUTES          0x80
+#define        RX8025_ADDR_CONTROL1        	0xE0
+#define        RX8025_ADDR_CONTROL2        	0xF0
+// 设备操作模式
+#define        RX8025_WRITE_MODE            0xF0
+#define        RX8025_READ_MODE             0xF0
+#define        RX8025_SIMP_READ_MODE        0x04
+
+
+
+#define	RTC8025T_Control1     (0x0D)  
+#define	RTC8025_Control1      (0x0E)  
+ 
+#define	RTC8025_PON           (0x10)  
+#define	RTC8025_XST           (0x20)  
+ 
+
+#define	RTC8025_Standard_Read (0x00)  
+#define	RTC8025_Simple_Read   (0x04)  
+ 
+// extern void Get8025( u8 addr, u8 *data, u8 counter); 
+// extern void Set8025( u8 addr, u8 *data, u8 counter); 
+extern void BSP_RX8025Init(void); 
+extern void RtcWriteTime(time_t stm);
+extern void RtcReadTime(time_t  stm);
+
+ 
+ 
+#endif 
+

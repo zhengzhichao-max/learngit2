@@ -1,0 +1,85 @@
+#include "include_all.h"
+
+/***********************************************************************************************
+* Function                : BSP_RX8025Write
+* Description        : 向时钟芯片写数据
+* Input                        :
+* Output                :
+* Note(s)                :
+* Contributor        : 081218        andydriver
+***********************************************************************************************/
+void BSP_RX8025Write(u8 *pData, u8 len) {
+    IIC_Write(RX8025T, (RX8025_ADDR_SECONDS & RX8025_WRITE_MODE), pData, len);
+}
+/***********************************************************************************************
+* Function                : BSP_RX8025Read
+* Description        : 从时钟芯片读取数据
+* Input                        :
+* Output                :
+* Note(s)                :
+* Contributor        : 081218        andydriver
+***********************************************************************************************/
+void BSP_RX8025Read(u8 *pData, u8 len) {
+    IIC_Read(RX8025T, (RX8025_ADDR_SECONDS & RX8025_READ_MODE), pData, len);
+}
+/***********************************************************************************************
+* Function                : BSP_RX8025ControlINTA
+* Description        : 控制芯片的INTA脚状态
+* Input                        : state:状态(_BSPRX8025_INTAOUT)
+                                        BSPRX8025_INTAOUT_HIZ:高阻
+                                        BSPRX8025_INTAOUT_LOW:输出低
+                                        BSPRX8025_INTAOUT_2HZ:输出2Hz(50%)的脉冲
+                                        BSPRX8025_INTAOUT_1HZ:输出1Hz(50%)的脉冲
+                                        BSPRX8025_INTAOUT_SEC:每秒的第0秒翻转?还是脉冲?
+                                        BSPRX8025_INTAOUT_MIN:每分的第0秒翻转?还是脉冲?
+                                        BSPRX8025_INTAOUT_HOUR:每时的第0秒翻转?还是脉冲?
+                                        BSPRX8025_INTAOUT_MONTH:每月的第0秒翻转?还是脉冲?
+* Output                :
+* Note(s)                :
+* Contributor        : 081218        andydriver
+***********************************************************************************************/
+//void BSP_RX8025ControlINTA(_BSPRX8025_INTAOUT state)
+//{
+//        _RX8025_REG_CONTROL1 data;
+//
+//        RX8025Read((RX8025_ADDR_CONTROL1&RX8025_READ_MODE),(u8 *)(&data),1);
+//        data.bits.CT = state;                                                        // INTA输出1Hz方波
+//        RX8025Write((RX8025_ADDR_CONTROL1&RX8025_WRITE_MODE),(u8 *)(&data),1);
+//}
+/***********************************************************************************************
+* Function                : BSP_RX8025Init
+* Description        : RX8025初始化
+* Input                        :
+* Output                :
+* Note(s)                :
+* Contributor        : 081210        andydriver
+***********************************************************************************************/
+void BSP_RX8025Init(void) {
+    u8 buf[16];
+    u8 i;
+    //iic_init();
+    IIC_Read(RX8025T, (RX8025_ADDR_SECONDS & RX8025_READ_MODE), buf, 8);
+    //putHexs_hex( buf, 8);
+
+    buf[0] = 0x20;
+    IIC_Write(RX8025T, (RX8025_ADDR_CONTROL1 & RX8025_WRITE_MODE), buf, 1); //24小时制
+    IIC_Read(RX8025T, RX8025_ADDR_SECONDS & RX8025_READ_MODE, buf, 16);
+    //putHexs_hex(buf, 16);
+    i++;
+}
+
+void RtcWriteTime(time_t stm) {
+}
+
+void RtcReadTime(time_t stm) {
+    u8 buf[16] = {0};
+    //        u8 i;
+    //iic_init();
+    IIC_Read(RX8025T, (RX8025_ADDR_SECONDS & RX8025_READ_MODE), buf, 8);
+    sys_time.year = buf[0];
+    sys_time.month = buf[1];
+    sys_time.date = buf[2];
+    sys_time.hour = buf[4];
+    sys_time.min = buf[5];
+    sys_time.sec = buf[6];
+}

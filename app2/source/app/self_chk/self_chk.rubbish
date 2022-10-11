@@ -1,0 +1,230 @@
+
+
+
+static void help(void) {
+    logd("0-1(HD,SD), 0-2(ok,err,full)");
+#if (MODULE_DEBUG_self_chk && 0)
+    // logd("1, get log size");
+
+    logd("2, x, rst addr & erase");
+    logd("2, new a log & w");
+
+    logd("3, x, rst addr");
+    logd("3, promt log");
+
+    logd("4, promt log all");
+    logd("5, promt log all");
+
+    logd("6, init state");
+
+    // logd("7, 1, mcu boot");
+    // logd("7, 2, rk boot");
+    // logd("7, 3, rk rst");
+
+    logd("8, insert");
+#endif //#if (MODULE_DEBUG_self_chk)
+    // logd("2, x, rst addr & erase");
+    // logd("5, promt log all");
+    // logd("8, insert");
+}
+
+int cmd_self_chk(argv_list_st *argv_list) {
+    if (argv_list->argc == 1) {
+        help();
+        return 0;
+    }
+    if (argv_list->argc != 3) {
+        loge("err");
+        return -1;
+    }
+    int who = -1, state = -1;
+    if (sscanf(argv_list->argv[1], "%d", &who) != 1) {
+        loge("err");
+        return -1;
+    }
+    if (sscanf(argv_list->argv[2], "%d", &state) != 1) {
+        loge("err");
+        return -1;
+    }
+
+    selfChk_HD_SD_stateSet(who, state);
+    return 0;
+
+#if (0)
+    switch (who) {
+#if (0)
+    case 1: {
+        log_w.index = 1;
+        int sz = sizeof(log_boot_rst_st);
+        float valf = (float)2048 / sz;
+        log_w.index_max = (unsigned short)valf;
+        logd("sz %d, 2048 / %d = %f, index_max = %d", sz, valf, log_w.index_max);
+        break;
+    }
+#endif
+#if (0)
+    case 2: {
+        if (argv_list->argc == 3) { //logd("2, x, rst addr & erase");
+#if (0)
+            int sz = sizeof(log_boot_rst_st);
+            float valf = (float)2048 / sz;
+            log_w = log_w_const;
+            log_w.index_max = (unsigned short)valf;
+#else
+            log_w = log_w_const;
+            log_w.index_max = get_index_max();
+#endif
+
+            FLASH_Unlock();
+            log_level_enum log_level = log_level_debug;
+            if (FLASH_ErasePage(ADDR_TEST_MCU_FLASH) == FLASH_COMPLETE) {
+                logd_NoNewLn("erase "_done_
+                             ", ",
+                             _done());
+            } else {
+                loge_NoNewLn("erase "_err_
+                             ", ",
+                             _err());
+                log_level = log_level_err;
+            }
+            FLASH_Lock();
+#if (0)
+            logb_endColor_newLn(log_level, "sz %d, 2048 / %d = %f, index_max = %d, rst write addr 0x%p", sz, sz, valf, log_w.index_max, log_w.p_write);
+#else
+            logb_endColor_newLn(log_level, "sz %d, index_max = %d, rst write addr 0x%p", sizeof(log_boot_rst_st), log_w.index_max, log_w.p_write);
+#endif
+        } else if (argv_list->argc == 2) { //logd("2, new a log & w");
+            if (log_w.index <= log_w.index_max) {
+                log_boot_rst_st *new_log = new_a_log_need_free(log_w.index++, log_w.event++, log_w.p_write, log_w.tic_delta);
+                if (log_w.event >= event_rk_cnt) {
+                    log_w.event = event_mcu_boot;
+                }
+                if (new_log == NULL) {
+                    loge("err");
+                } else {
+                    read_write_log(log_rw_write, (unsigned int)log_w.p_write++, new_log, __func__, __LINE__, ENABLE);
+                    FLASH_Lock();
+                    free(new_log);
+                }
+            } else {
+                logf("max");
+            }
+        } else {
+            loge("undef");
+        }
+        break;
+    }
+#endif
+#if (MODULE_DEBUG_self_chk && 0)
+    case 3: {
+        static log_boot_rst_st *p_read = (log_boot_rst_st *)ADDR_TEST_MCU_FLASH;
+        if (argv_list->argc == 3) { //logd("3, x, rst addr");
+            p_read = (log_boot_rst_st *)ADDR_TEST_MCU_FLASH;
+            logd("rst read addr 0x%p", ADDR_TEST_MCU_FLASH);
+        } else if (argv_list->argc == 2) { //logd("3, promt log");
+            log_boot_rst_st log;
+            if (read_write_log(log_rw_read, (unsigned int)p_read++, &log, __func__, __LINE__, ENABLE) != 0) {
+                p_read--;
+            }
+        } else {
+            loge("undef");
+        }
+        break;
+    }
+    case 4: {
+        if (argv_list->argc == 2) { //logd("4, promt log all");
+            log_boot_rst_st *p_read = (log_boot_rst_st *)ADDR_TEST_MCU_FLASH;
+            int ret = -1;
+            do {
+                log_boot_rst_st log;
+                ret = read_write_log(log_rw_read, (unsigned int)p_read++, &log, __func__, __LINE__, ENABLE);
+            } while (ret == 0);
+        } else {
+            loge("undef");
+        }
+        break;
+    }
+#endif //#if (MODULE_DEBUG_self_chk)
+#if (0)
+    case 5: {
+        if (argv_list->argc == 2) { //logd("5, promt log all");
+            log_boot_rst_st *p_read = (log_boot_rst_st *)ADDR_TEST_MCU_FLASH;
+            int ret = -1;
+            do {
+                log_boot_rst_st log;
+                ret = read_write_log(log_rw_read, (unsigned int)p_read++, &log, __func__, __LINE__, DISABLE);
+                if (ret == 0) {
+                    promt_log(&log, __func__, __LINE__);
+                    uart1_tran_task_nms(5);
+                    // logd(_ok_, _ok());
+                } else {
+                    logd(_word_("end"), _word_color(log_level_fatal));
+                }
+            } while (ret == 0);
+        } else {
+            loge("undef");
+        }
+        break;
+    }
+#endif
+#if (MODULE_DEBUG_self_chk && 0)
+    case 6: { //logd("6, init state");
+        init_par_log_write();
+        break;
+    }
+#endif //#if (MODULE_DEBUG_self_chk)
+#if (0)
+    case 7: {
+        /*
+                logd("7, 1, mcu boot");
+                logd("7, 2, rk boot");
+                logd("7, 3, rk rst");
+                */
+
+        /*
+            typedef enum {
+    event_mcu_boot = 0,
+    event_rk_boot,
+    event_rk_rst,
+    event_rk_cnt,
+} event_boot_rst_enum;
+            */
+        /*
+           jiffies//ms
+          mix.time
+           */
+        /*
+
+          */
+
+        // log_boot_rst_st *p_read = (log_boot_rst_st *)ADDR_TEST_MCU_FLASH;
+        // int ret = -1;
+        // do {
+        //     log_boot_rst_st log;
+        //     ret = read_write_log(log_rw_read, (unsigned int)p_read++, &log, __func__, __LINE__, DISABLE);
+        //     if (ret == 0) {
+        //         promt_log(&log, __func__, __LINE__);
+        //         // logd(_ok_, _ok());
+        //     } else {
+        //         logd(_word_("end"), _word_color(log_level_fatal));
+        //     }
+        // } while (ret == 0);
+        loge("undef");
+        break;
+    }
+#endif
+#if (0)
+    case 8: { //logd("8, insert");
+        log_write(event_insert);
+        break;
+    }
+#endif
+    default: {
+        loge("undef");
+        break;
+    }
+    }
+
+    return -1;
+#endif
+}
